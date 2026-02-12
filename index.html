@@ -17,6 +17,12 @@
             padding: 0;
         }
     </style>
+    <script>
+      // Minimal polyfill for process.env in browser to prevent ReferenceError from some libraries
+      if (typeof process === 'undefined') {
+        window.process = { env: {} };
+      }
+    </script>
     <script type="importmap">
     {
       "imports": {

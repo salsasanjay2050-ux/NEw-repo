@@ -66,6 +66,8 @@ const CONTENT_SCHEMA = {
 
 export const generateMLTContent = async (topic: string, language: LanguageStyle): Promise<MLTContent> => {
   // Initializing inside the function ensures the API KEY from the environment is captured at call time.
+  // The API key must be obtained exclusively from the environment variable process.env.API_KEY.
+  // Assume this variable is pre-configured, valid, and accessible in the execution context.
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   const systemInstruction = `
